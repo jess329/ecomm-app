@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --clr1-bg: #FFEDDB;
+  --clr2: #C1856D;
+  --clr3: #7B4019;
 }
 
 @theme inline {
@@ -20,7 +23,11 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--clr1-bg);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background: var(--clr3);
 }
