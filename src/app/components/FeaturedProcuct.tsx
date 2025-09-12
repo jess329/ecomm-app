@@ -52,7 +52,7 @@ export default function FeaturedProduct({
             <div>
                 <p className="text-sm text-gray-800">          
                 {description}
-                <Link href={bookLink} className="text-blue-600 hover:underline ml-2">
+                <Link href={bookLink} target="_blank" className="text-blue-600 hover:underline ml-2">
                     More of this book &rarr;
                 </Link>
                 </p>

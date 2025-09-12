@@ -3,7 +3,7 @@ import FeaturedProduct from "../components/FeaturedProcuct";
 
 
 export default async function BooksPage() {
-    const dummyBooks = Array(20).fill(null); // Beispiel-Datenarray mit 12 Einträgen
+    const dummyBooks = Array(12).fill(null); // Beispiel-Datenarray mit 12 Einträgen
 
     // Wir rufen die Google Books API auf, um 20 Bücher zu erhalten
     const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=book&maxResults=20');

@@ -1,3 +1,4 @@
+import { Book } from "@/types/book";
 import FeaturedProduct from "./FeaturedProcuct";
 
 
@@ -11,7 +12,7 @@ function truncateText(text: string, maxLength: number) {
 }
 
 interface BookGridProps {
-    books: any[];
+    books: Book[];
 }
 
 export default function BookGrid({ books }: BookGridProps) {
@@ -29,6 +30,9 @@ export default function BookGrid({ books }: BookGridProps) {
         const imageUrl = volumeInfo?.imageLinks?.thumbnail || 'https://via.placeholder.com/150x200?text=No+Cover';
         const price = volumeInfo?.listPrice?.amount || 'Preis nicht verfügbar';
         const formattedPrice = typeof price === 'number' ? `${price} €` : price;
+        const bookLink = volumeInfo?.infoLink || '/';
+
+        // Rendere die FeaturedProduct-Komponente mit den extrahierten Daten
 
         return (
           <FeaturedProduct 
@@ -39,6 +43,7 @@ export default function BookGrid({ books }: BookGridProps) {
             description={shortDescription}
             category={category}
             imageUrl={imageUrl}
+            bookLink={bookLink}
             id={id}
           />
         );
