@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
       },{
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
+      },{
+        protocol: 'http',
+        hostname: 'books.google.com',
       },
     ],
   },
