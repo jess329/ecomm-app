@@ -15,7 +15,7 @@ export default async function FeaturedProductsSection() {
 
     const data = await res.json();
     const featuredBooks = data.items || []; // Stelle sicher, dass "items" existiert
-    console.log(featuredBooks)
+    // console.log(featuredBooks)
 
     return (
         <section className="container mx-auto px-4 py-12">
