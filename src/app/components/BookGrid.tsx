@@ -16,10 +16,12 @@ interface BookGridProps {
 }
 
 export default function BookGrid({ books }: BookGridProps) {
+  console.log(books);
+
     return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {books.map((book) => {
-        const {id, volumeInfo} = book;
+        const {id, volumeInfo, saleInfo} = book;
 
         // Sicherstellen, dass die Daten existieren, bevor sie übergeben werden
         const title = volumeInfo?.title || 'Unbekannter Titel';
@@ -28,8 +30,8 @@ export default function BookGrid({ books }: BookGridProps) {
         const shortDescription = truncateText(description, 50); // Kürze die Beschreibung auf 50 Wörter
         const category = volumeInfo?.categories?.[0] || 'Unbekannte Kategorie';
         const imageUrl = volumeInfo?.imageLinks?.thumbnail || 'https://via.placeholder.com/150x200?text=No+Cover';
-        const price = volumeInfo?.listPrice?.amount || 'Preis nicht verfügbar';
-        const formattedPrice = typeof price === 'number' ? `${price} €` : price;
+        const price = saleInfo?.listPrice?.amount || undefined;
+        // const formattedPrice = typeof price === 'number' ? `${price} €` : price;
         const bookLink = volumeInfo?.infoLink || '/';
 
         // Rendere die FeaturedProduct-Komponente mit den extrahierten Daten
@@ -39,7 +41,7 @@ export default function BookGrid({ books }: BookGridProps) {
             key={id} 
             title={title}
             author={author}
-            price={formattedPrice}
+            price={price}
             description={shortDescription}
             category={category}
             imageUrl={imageUrl}

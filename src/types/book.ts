@@ -8,9 +8,11 @@ export type Book = {
     imageLinks?: {
       thumbnail?: string;
     };
-    listPrice?: {
-      amount?: number;
-    };
     infoLink?: string;
   };
+  saleInfo: {
+    listPrice?: {
+      amount?: number;
+    }
+  }
 };
